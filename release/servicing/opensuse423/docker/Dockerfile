@@ -74,6 +74,7 @@ RUN zypper --non-interactive update --skip-interactive \
         -NoLogo \
         -NoProfile \
         -Command " \
+          \$Env:POWERSHELL_TELEMETRY_OPTOUT=1; \
           \$ErrorActionPreference = 'Stop' ; \
           \$ProgressPreference = 'SilentlyContinue' ; \
           while(!(Test-Path -Path \$env:PSModuleAnalysisCachePath)) {  \
